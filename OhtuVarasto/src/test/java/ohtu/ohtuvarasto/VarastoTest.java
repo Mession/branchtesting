@@ -19,6 +19,37 @@ public class VarastoTest {
     public void setUp() {
         varasto = new Varasto(10);
     }
+    
+    // omat
+    
+    @Test
+    public void laitetaanLiikaaKamaa() {
+        varasto.lisaaVarastoon(15);
+        assertEquals(10, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void otetaanLiikaaKamaa() {
+        varasto.lisaaVarastoon(100);
+        varasto.otaVarastosta(15);
+        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void negatiivinenOttaminenEiVahennaTaiLisaaSaldoa() {
+        varasto.lisaaVarastoon(5);
+        varasto.otaVarastosta(-3);
+        assertEquals(5, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void negatiivinenLisaysEiVahennaTaiLisaaSaldoa() {
+        varasto.lisaaVarastoon(5);
+        varasto.lisaaVarastoon(-3);
+        assertEquals(5, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    // omat end
 
     @Test
     public void konstruktoriLuoTyhjanVaraston() {
