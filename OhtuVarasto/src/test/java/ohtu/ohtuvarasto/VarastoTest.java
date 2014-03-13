@@ -39,7 +39,7 @@ public class VarastoTest {
     public void negatiivinenOttaminenEiVahennaTaiLisaaSaldoa() {
         varasto.lisaaVarastoon(5);
         varasto.otaVarastosta(-3);
-        assertEquals(6, varasto.getSaldo(), vertailuTarkkuus);
+        assertEquals(5, varasto.getSaldo(), vertailuTarkkuus);
     }
     
     @Test
