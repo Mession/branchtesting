@@ -49,7 +49,7 @@ public class VarastoTest {
         assertEquals(5, varasto.getSaldo(), vertailuTarkkuus);
     }
     
-    // omat end
+    // omat end 
 
     @Test
     public void konstruktoriLuoTyhjanVaraston() {
